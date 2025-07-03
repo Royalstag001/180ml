@@ -2,6 +2,7 @@
 - name: play
   hosts: localhost
   vars_files: mypackage
+  tasks:
   - name: install package
     apt:
      name: "{{ package }}"
