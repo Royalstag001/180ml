@@ -1,0 +1,11 @@
+---
+- name: play
+  hosts: localhost
+  vars_files: mypackage
+  - name: install package
+    apt:
+     name: "{{ package }}"
+     state: latest
+    register: output
+  - debug:
+     var: output   
