@@ -1,0 +1,12 @@
+---
+- name: play
+  hosts: dbserver
+  tasks:
+  - name: remote file details
+    fetch: 
+     src: /media/a/i/d/s/some2.txt
+     dest: /home/vm1/Videos/some2.txt 
+     flat: yes
+    register: output
+  - debug:
+     var: output

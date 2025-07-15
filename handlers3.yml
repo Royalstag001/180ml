@@ -1,0 +1,26 @@
+---
+- name: play
+  hosts: dbserver  
+  force_handlers: true
+  tasks:
+  - name: install and erstart serice
+    apt:
+     name: nginx
+     state: latest
+    notify:
+    - restart nginx
+    - print msg
+  - name: install vlcc
+    apt:
+     name: vlcdwfwf
+     state: latest
+  handlers:
+  - name: restart nginx
+    service:
+     name: nginx  
+     state: restarted
+  - name: print msg
+    debug:
+     msg: "installed and configures successfully"
+  
+   

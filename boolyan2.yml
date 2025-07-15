@@ -1,0 +1,11 @@
+---
+- name: play
+  hosts: servers
+  vars: 
+   myvar: true
+  tasks:
+  - name: install nginx
+    apt:
+     name: nginx
+     state: latest
+    when: myvar

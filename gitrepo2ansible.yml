@@ -1,0 +1,12 @@
+---
+- name: github to local
+  hosts: localhost
+  tasks: 
+  - name: pull from git repo to local
+    git:   
+     repo: https://github.com/Royalstag001/180ml.git
+     dest: /home/vm1/Gitrepo_ansible
+     version: solo   
+    register: output
+  - debug:
+     var: output

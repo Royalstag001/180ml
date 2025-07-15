@@ -1,0 +1,19 @@
+---
+- name: play
+  hosts: dbserver
+  tasks:
+  - name: block
+    blockinfile:
+     path: /media/a/i/d/s/some2.txt
+     state: present
+     block: |  
+            sgtete
+            teyeyeyeyuey
+            jhtijewitjietjj
+             hihis
+              nkdsnfgkdso
+     insertafter: 'wetewt'  
+     backup: yes
+    register: output
+  - debug: 
+     var: output

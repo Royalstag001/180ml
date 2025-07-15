@@ -1,0 +1,12 @@
+---
+- name: play
+  hosts: dbserver
+  tasks:
+  - name: j2
+    template:
+     src: /home/vm1/Documents/host_ip_details
+     dest: /media
+    register: output
+  - debug:
+     var: output 
+ 

@@ -1,0 +1,23 @@
+---
+- name: play
+  hosts: servers
+  tasks:
+   - block:
+     - name: install nginxa
+       apt:
+        name: nginxss
+        state: latest
+     - name: create user
+       user:
+        name: dbuser1
+        state: present   
+     when: inventory_hostname in groups['dbserver']
+     rescue:
+     - name: rescue task
+       debug: 
+        msg: " task rescued "
+     always:
+      - name: always twask
+        debug:
+         msg: " always done "
+

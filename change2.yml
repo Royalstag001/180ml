@@ -1,0 +1,16 @@
+---
+- name: play
+  hosts: dbserver
+  tasks:
+  - name: create user
+    command: "sh /usr/bin/usercreation.sh"   
+    register: output
+   # changed_when: "'Success' in output.stdout"   
+    notify: 
+    - printmsg
+  - debug:    
+     var: output
+  handlers:
+  - name: printmsg
+    debug:
+     msg: "user created " 

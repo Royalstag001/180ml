@@ -1,0 +1,7 @@
+---
+- name: play
+  hosts: node1.example.com
+  tasks:  
+  - name: facts
+    debug:
+     msg: my ip details "{{ ansible_facts['default_ipv4']['address'] }}"

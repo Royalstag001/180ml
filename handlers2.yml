@@ -1,0 +1,21 @@
+---
+- name: play
+  hosts: dbserver
+  tasks:
+  - name: install and restart service
+    apt:
+     name: nginx
+     state: latest
+    notify:
+    - restart nginx
+    - print msg
+  handlers:  
+  - name: restart nginx
+    service:  
+     name: nginx
+     state: restarted
+  - name: print msg  
+    debug:
+     msg: "nginx configured completely"
+  
+   

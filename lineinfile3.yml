@@ -1,0 +1,9 @@
+---
+- name: play
+  hosts: node1.example.com
+  tasks:
+  - name: line
+    lineinfile:
+     path: /etc/sudoers.d/remoteuser  
+     state: absent
+     line: '#remoteuser details'

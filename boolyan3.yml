@@ -1,0 +1,15 @@
+---
+- name: play
+  hosts: dbserver
+  vars:
+   supported_distors:
+    - Ubuntu 
+    - Centos
+    - Redhat
+  vars_files: mypackage
+  tasks: 
+  - name: inatall
+    apt:
+     name: "{{ package }}"
+     state: latest
+    when: ansible_distribution in supported_distors 

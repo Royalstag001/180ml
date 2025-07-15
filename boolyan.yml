@@ -1,0 +1,17 @@
+---
+- name: play  
+  hosts: dbserver
+  vars_files:  
+  - mypackage 
+  tasks:
+  - name: boolyan
+    apt:
+     name: "{{ package }}"
+     state: latest
+    when: package is defined
+    register: output
+  - name: debug
+    debug:
+     var: output
+        
+

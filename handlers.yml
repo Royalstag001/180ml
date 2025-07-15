@@ -1,0 +1,21 @@
+---
+- name: play
+  hosts: dbserver
+  tasks:
+  - name: restart service after install
+    apt: 
+     name: mysql-server
+     state: latest
+    notify:
+     - restart mysql
+     - print msg
+    
+  handlers: 
+  - name: restart mysql
+    service:
+     name: mysql
+     state: restarted  
+  - name: print msg
+    debug:
+     msg: "mysql-server installed and service restarted"
+

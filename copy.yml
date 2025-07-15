@@ -1,0 +1,8 @@
+---
+- name: play
+  hosts: dbserver
+  tasks:
+  - name: copy file
+    copy:
+     src: /home/vm1/playbook/file.txt
+     dest: /home/devops/a/b 

@@ -1,0 +1,14 @@
+---
+- name: play
+  hosts: node1.example.com
+  tasks:
+  - name: line
+    lineinfile:
+     path: /etc/sudoers.d/remoteuser  
+     state: present
+     line: '#remoteuser details'
+     insertafter: '^devops ALL=(ALL) NOPASSWD: ALL'  
+     create: yes
+    register: output
+  - debug: 
+     var: output

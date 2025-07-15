@@ -1,0 +1,5 @@
+---
+- name: play
+  hosts: dbserver  
+  roles:
+  - role: nignx

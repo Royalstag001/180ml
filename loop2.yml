@@ -1,0 +1,16 @@
+
+---
+- name: play
+  hosts: dbserver
+  vars_files:
+  - myusers
+  tasks:
+  - name: loop
+    user:
+     name: "{{ item }}"
+     state: present
+    loop: "{{ users }}"
+    register: useroutput
+  - name: debug
+    debug:
+     var: useroutput

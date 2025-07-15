@@ -1,0 +1,8 @@
+---
+- name: play
+  hosts: dbserver
+  tasks:   
+  - name: import task
+    import_playbook:    	
+     path: /home/vm1/Gitrepo_ansible/git_ansible.yml
+   

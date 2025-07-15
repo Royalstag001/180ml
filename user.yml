@@ -1,0 +1,8 @@
+---
+- name: create user
+  hosts: dbserver
+  tasks:
+  - name: create user
+    user:
+     name: u228
+     state: present

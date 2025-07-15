@@ -1,0 +1,7 @@
+---
+- name: play
+  hosts: dbserver
+  tasks:   
+  - name: import task
+    import_tasks: task_import.yml
+   

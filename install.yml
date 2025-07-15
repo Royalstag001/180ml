@@ -1,0 +1,10 @@
+---
+ - name: play
+   hosts: dbserver
+   become: True 
+   tasks:
+   - name: install httpd
+     apt: 
+      name: nginx 
+      state: latest 
+...

@@ -1,0 +1,13 @@
+
+--- 
+- name: play
+  hosts: dbserver
+  tasks:
+  - name: register
+    apt:
+     name: php
+     state: latest
+    register: output
+  - name: debug
+    debug:
+     var: output

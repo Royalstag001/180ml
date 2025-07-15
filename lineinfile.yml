@@ -1,0 +1,13 @@
+---
+- name: play
+  hosts: dbserver
+  tasks:
+  - name: line
+    lineinfile:
+     path: /etc/apache2/apache2.conf
+     regexp: '^HostnameLookups'
+     line: HostnameLookups Offline
+    register: output
+  - debug:
+     var: output
+   

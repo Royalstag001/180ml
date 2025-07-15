@@ -1,0 +1,12 @@
+--- 
+- name: play
+  hosts: dbserver
+  tasks:
+  - name: register
+    user:
+     name: u2111
+     state: present
+    register: useroutput
+  - name: debug
+    debug:
+     msg: user details"{{useroutput['shell']}}"

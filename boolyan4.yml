@@ -1,0 +1,13 @@
+---
+- name: play
+  hosts: dbserver
+  tasks:
+  - name: boolian
+    apt:
+     name: mysql-server
+     state: latest
+    loop: "{{ ansible_mounts }}"
+    when: item.mount == "/" and item.size_total > 13036544
+    register: output
+  - debug:
+     var: output

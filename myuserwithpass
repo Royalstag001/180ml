@@ -1,0 +1,18 @@
+users:
+- username: user12467
+  userid: 19089498
+  comment: dbuser
+  shell: /bin/sh 
+  upass: redhar127883
+
+- username: user300098
+  userid: 99834809
+  comment: dbuser
+  shell: /bin/sh   
+  upass: redhat450989995
+
+- username: user4333599
+  userid: 3958
+  comment: dbuser
+  shell: /bin/sh  
+  upass: redhar455666088

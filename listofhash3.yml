@@ -1,0 +1,20 @@
+---
+- name: play
+  hosts: dbserver
+  no_log: true 
+  vars_files: 
+  - myuserwithpass
+  tasks:
+  - name: loop 
+    user: 
+     name: "{{ item.username }}"
+     uid: "{{ item.userid }}"
+     comment: "{{ item.comment }}"
+     shell: "{{ item.shell }}"  
+     password: "{{ item.upass| password_hash('sha512') }}"
+     state: present  
+    loop: "{{ users }}"
+    register: useroutput  
+  - name: debug
+    debug: 
+     var: useroutput
