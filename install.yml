@@ -1,6 +1,7 @@
 ---
  - name: play
-   hosts: localhost
+   hosts: dbservers
+  
    become: True 
    tasks:
    - name: install httpd
