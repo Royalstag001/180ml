@@ -1,6 +1,6 @@
 ---
  - name: play
-   hosts: dbservers
+   hosts: dbserver
   
    become: True 
    tasks:
